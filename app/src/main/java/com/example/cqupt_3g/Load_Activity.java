@@ -21,15 +21,14 @@ public class Load_Activity extends AppCompatActivity {
         Button buttonRegister=(Button) findViewById(R.id.register);
         EditText loadAccount=(EditText) findViewById(R.id.loadAccount);
         EditText loadPassword=(EditText) findViewById(R.id.loadPassword);
-        SharedPreferences register=getSharedPreferences("register",MODE_PRIVATE);
 
-
+        SharedPreferences register=getSharedPreferences("Load_Activity",MODE_PRIVATE);
+        String a= loadAccount.getText().toString();
+        String b= register.getString("account","1");
+        String c= loadPassword.getText().toString();
+        String d= register.getString("password","0");
 
         buttonLoad.setOnClickListener(new View.OnClickListener() {
-            String a= loadAccount.getText().toString();
-            String b= register.getString("account","1");
-            String c= loadPassword.getText().toString();
-            String d= register.getString("password","0");
             @Override
             public void onClick(View v) {
                 if(a.equals(b)&&c.equals(d)) {
